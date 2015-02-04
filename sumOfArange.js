@@ -5,10 +5,16 @@
 //this range. 
 
 //This function takes the range of two numbers and puts them into an array.
-function range(start, end) {
+function range(start, end, step) {
   var nums = [];
-  for (var i=start;i<=end;i++) {
-    nums.push(i);
+  if (step == undefined) {
+    for (var i=start;i<=end;i++) {
+      nums.push(i);
+    }
+  } else {
+    for (var i=start;i<=end;i+=step) {
+      nums.push(i);
+    }
   }
   return nums;
 }
@@ -25,3 +31,6 @@ function sum(arr) {
 
 console.log(range(1,10));
 console.log(sum(range(1, 10)));
+
+console.log(range(1,10,2));
+console.log(sum(range(1,10,2)));
